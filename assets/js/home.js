@@ -296,3 +296,34 @@ $(window).scroll(function(){
 		$('#homeLink').addClass('active');
 	}
 })
+
+/* SETTING NAVBAR FOR SMALL SCREENS */
+$('.navbar-toggle').on('click', function(){
+	$('.navbar-collapse').css('background','#272727');
+})
+$(window).resize(function(){
+	if ($(window).width() > 950) {
+		$('.navbar-collapse').css('background','none');
+	}
+}) 
+// $('#smallScreenMenu').css({
+// 	left: $('#main').offset().left
+// })
+// $('.navbar-toggle').on('click', function(){
+// 	if ($(window).width() < 750) {
+// 		$('#smallScreenMenu').css({
+// 			top: '0',
+// 			right: '-100%',
+// 			visibility: 'visible'
+// 		})
+// 		$('#smallScreenMenu').animate({
+// 			right: '0px'
+// 		}, 1000)
+// 		$('#main').css({
+// 			position: 'relative'
+// 		})
+// 		$('#main').animate({
+// 			left: '-260px'
+// 		}, 1000)
+// 	}
+// })

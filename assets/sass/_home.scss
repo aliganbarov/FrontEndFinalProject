@@ -7,90 +7,86 @@
 		width: 100%;
 		z-index: 10;
 		.navbar-inverse {
-		background: none;
-		border: none;
-		
-		.navbar-header { 
-			.navbar-toggle {
-				border: none;
-				margin-right: 0px;
-				span {
-					background: $blue;
+			background: none;
+			border: none;		
+			.navbar-header { 
+				.navbar-toggle {
+					border: none;
+					margin-right: 0px;
+					span {
+						background: $blue;
+					}
 				}
 			}
-		}
-
-		
-
-		.container-fluid {
-			height: 75px;
-			padding-top: 10px;
-			.navbar-header {
-				img {
-					height: 30px;
+			.container-fluid {
+				height: 75px;
+				padding-top: 10px;
+				.navbar-header {
+					img {
+						height: 30px;
+					}
 				}
-			}
-			.navbar-collapse {
-				.navbar-nav {
-					margin-left: 50px;
-					.active {
-						a {
-							background: none;
-								border-bottom: 2px solid $blue;
-								color: $blue;
-						}
-					}
-					.open {
-						a {
-							background: $openedColor;
-						}
-						
-					}
-					li {
-						font-weight: bold;
-						a {
-							color: $mainColor;
-						}
+				.navbar-collapse {
+					.navbar-nav {
+						margin-left: 50px;
 						.active {
+							a {
+								background: none;
+									border-bottom: 2px solid $blue;
+									color: $blue;
+							}
+						}
+						.open {
+							a {
+								background: $openedColor;
+							}
 							
 						}
-					}
-					.dropdown {
-						box-sizing: 'border-box';
-						ul {
-							padding: 0px;
-							li {
-								background: $openedColor;
-								padding: 10px 2px;
-								border-bottom: 1px solid black;
-								width: 200px;
-								a {
-									
-								}
+						li {
+							font-weight: bold;
+							a {
+								color: $mainColor;
 							}
-							li:hover {
-								background: black;
-								a {
-									background: black;
-									color: $blue;
-								}
+							.active {
+								
 							}
 						}
-						.dropdown-menu {
-							.rightCaret {
-								float: right;
+						.dropdown {
+							box-sizing: 'border-box';
+							ul {
+								padding: 0px;
+								li {
+									background: $openedColor;
+									padding: 10px 2px;
+									border-bottom: 1px solid black;
+									width: 200px;
+									a {
+										
+									}
+								}
+								li:hover {
+									background: black;
+									a {
+										background: black;
+										color: $blue;
+									}
+								}
 							}
-						}//end .dropdown-menu
-					}//end .dropdown
-				}
-				.navbar-right {
-					button {
-						@include normalBtn(8px, 20px, $blue);
-						margin-top: 8px;
+							.dropdown-menu {
+								.rightCaret {
+									float: right;
+								}
+							}//end .dropdown-menu
+						}//end .dropdown
 					}
-				}
-			}//end .navbar-collapse
-		}
+					.navbar-right {
+						button {
+							@include normalBtn(8px, 20px, $blue);
+							margin-top: 8px;
+						}
+					}
+				}//end .navbar-collapse
+			}
 		}	
 		#homepagesMenu {
 			position: absolute;

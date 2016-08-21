@@ -6419,6 +6419,12 @@ body, html {
     margin-bottom: 20px;
     color: #A4B6CC; }
 
+#smallScreenMenu {
+  background: #272727;
+  visibility: hidden;
+  position: absolute;
+  width: 260px; }
+
 body {
   font-family: 'Lato', sans-serif; }
 
