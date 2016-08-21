@@ -13,90 +13,94 @@ var clientsPlayed = false;
 var membersPlayed = false;
 
 $(window).scroll(function(){
-	if (!logoPlayed) {
-		if ($(window).scrollTop() >= 200 && $(window).scrollTop() <= 600) {
-			var logos = ['#logo1', '#logo2', '#logo3', '#logo4', '#logo5'];
-			AnimateLogo(logos);
-			logoPlayed = true;
+	if ($(window).width() >= 1000) {
+		if (!logoPlayed) {
+			if ($(window).scrollTop() >= 200 && $(window).scrollTop() <= 600) {
+				var logos = ['#logo1', '#logo2', '#logo3', '#logo4', '#logo5'];
+				AnimateLogo(logos);
+				logoPlayed = true;
+			}
 		}
-	}
-	if (!startupPlayed) {
-		if ($(window).scrollTop() >= 500 && $(window).scrollTop() <= 1200) {
-			EdgeToCenter('#firstTabLeft', '#firstTabRight');
-			startupPlayed = true;
+		if (!startupPlayed) {
+			if ($(window).scrollTop() >= 500 && $(window).scrollTop() <= 1200) {
+				EdgeToCenter('#firstTabLeft', '#firstTabRight');
+				startupPlayed = true;
+			}
 		}
-	}
-	if (!tech1Played) {
-		if ($(window).scrollTop() >= 1150 && $(window).scrollTop() <= 1950) {
-			$('.techPanel:first-child').css('visibility', 'visible');
-			EdgeToCenter('#firstTechLeft', '#firstTechRight');
-			tech1Played = true;
+		if (!tech1Played) {
+			if ($(window).scrollTop() >= 1150 && $(window).scrollTop() <= 1950) {
+				$('.techPanel:first-child').css('visibility', 'visible');
+				EdgeToCenter('#firstTechLeft', '#firstTechRight');
+				tech1Played = true;
+			}
 		}
-	}
-	if (!tech2Played) {
-		if ($(window).scrollTop() >= 1700 && $(window).scrollTop() <= 2450) {
-			$('.techPanel:last-child').css('visibility', 'visible');
-			EdgeToCenter('#secondTechLeft', '#secondTechRight');
-			tech2Played = true;
+		if (!tech2Played) {
+			if ($(window).scrollTop() >= 1700 && $(window).scrollTop() <= 2450) {
+				$('.techPanel:last-child').css('visibility', 'visible');
+				EdgeToCenter('#secondTechLeft', '#secondTechRight');
+				tech2Played = true;
+			}
 		}
-	}
-	if (!stasPlayed) {
-		if ($(window).scrollTop() >= 2600 && $(window).scrollTop() <= 3200) {
-			animateFirstImg();
-			$('#stasImg1').css('visibility', 'visible');
-			stasPlayed = true;
+		if (!stasPlayed) {
+			if ($(window).scrollTop() >= 2600 && $(window).scrollTop() <= 3200) {
+				animateFirstImg();
+				$('#stasImg1').css('visibility', 'visible');
+				stasPlayed = true;
+			}
 		}
-	}
-	if (!features1Played) {
-		if ($(window).scrollTop() >= 3000 && $(window).scrollTop() <= 3500) {
-			AnimateFeatures1();
-			$('#featuresRow1').css('visibility', 'visible');
-			features1Played = true;
+		if (!features1Played) {
+			if ($(window).scrollTop() >= 3000 && $(window).scrollTop() <= 3500) {
+				AnimateFeatures1();
+				$('#featuresRow1').css('visibility', 'visible');
+				features1Played = true;
+			}
 		}
-	}
-	if (!features2Played) {
-		if ($(window).scrollTop() >= 3300 && $(window).scrollTop() <= 3700) {
-			AnimateFeatures2();
-			$('#featuresRow2').css('visibility', 'visible');
-			features2Played = true;
+		if (!features2Played) {
+			if ($(window).scrollTop() >= 3300 && $(window).scrollTop() <= 3700) {
+				AnimateFeatures2();
+				$('#featuresRow2').css('visibility', 'visible');
+				features2Played = true;
+			}
 		}
-	}
-	if (!updatesPlayed) {
-		if ($(window).scrollTop() >= 3500 && $(window).scrollTop() <= 4000) {
-			EdgeToCenter('#updatesLeft', '#updatesRight');
-			$('#updates .container .row').css('visibility', 'visible');
-			updatesPlayed = true;
+		if (!updatesPlayed) {
+			if ($(window).scrollTop() >= 3500 && $(window).scrollTop() <= 4000) {
+				EdgeToCenter('#updatesLeft', '#updatesRight');
+				$('#updates .container .row').css('visibility', 'visible');
+				updatesPlayed = true;
+			}
 		}
-	}
-	if (!packagesPlayed) {
-		if ($(window).scrollTop() >= 3800 && $(window).scrollTop() <= 4900) {
-			DownToTop('#packages');
-			packagesPlayed = true;
+		if (!packagesPlayed) {
+			var visibleTop = $('#packages').offset().top - 300;
+			var visibleBottom = $('#packages').offset().top + $('#packages').height() - 200;
+			if ($(window).scrollTop() >= visibleTop && $(window).scrollTop() <= visibleBottom) {
+				DownToTop('#packages');
+				packagesPlayed = true;
+			}
 		}
-	}
-	if (!awardsPlayed) {
-		if ($(window).scrollTop() >= 4650 && $(window).scrollTop() <= 5250) {
-			TopToDown('#awards');		
-			awardsPlayed = true;
+		if (!awardsPlayed) {
+			if ($(window).scrollTop() >= 4650 && $(window).scrollTop() <= 5250) {
+				TopToDown('#awards');		
+				awardsPlayed = true;
+			}
 		}
-	}
-	if (!clientsSayPlayed) {
-		if ($(window).scrollTop() >= 4950 && $(window).scrollTop() <= 5550) {
-			TopToDown('#clientsSay');
-			clientsSayPlayed = true;
+		if (!clientsSayPlayed) {
+			if ($(window).scrollTop() >= 4950 && $(window).scrollTop() <= 5550) {
+				TopToDown('#clientsSay');
+				clientsSayPlayed = true;
+			}
 		}
-	}
-	if (!clientsPlayed) {
-		if ($(window).scrollTop() >= 5250 && $(window).scrollTop() <= 5750) {
-			TopToDown('#clients');
-			clientsPlayed = true;
+		if (!clientsPlayed) {
+			if ($(window).scrollTop() >= 5250 && $(window).scrollTop() <= 5750) {
+				TopToDown('#clients');
+				clientsPlayed = true;
+			}
 		}
-	}
-	if (!membersPlayed) {
-		if ($(window).scrollTop() >= 5800 && $(window).scrollTop() <= 6400) {
-			var members = ['#member1', '#member2', '#member3', '#member4'];
-			AnimateLogo(members);
-			membersPlayed = true;
+		if (!membersPlayed) {
+			if ($(window).scrollTop() >= 5800 && $(window).scrollTop() <= 6400) {
+				var members = ['#member1', '#member2', '#member3', '#member4'];
+				AnimateLogo(members);
+				membersPlayed = true;
+			}
 		}
 	}
 })
@@ -169,5 +173,33 @@ function AnimateFeatures2() {
 	})
 }
 
+/* CANCEL VISIBILITY HIDDEN FOR SMALL SCREENS */
+function CancelVisibilityHidden(element) {
+	$(element).css({
+		visibility: 'visible',
+		opacity: '1'
+	});
+}
 
+function ElementsVisibility() {
+	CancelVisibilityHidden('#featuresRow1');
+	CancelVisibilityHidden('#featuresRow2');
+	CancelVisibilityHidden('#clientsSay');
+	CancelVisibilityHidden('#clients');
+	CancelVisibilityHidden('#logo img');
+	CancelVisibilityHidden('#packages');
+	CancelVisibilityHidden('#awards');
+	CancelVisibilityHidden('#stasImg1');
+	CancelVisibilityHidden('#member1');
+	CancelVisibilityHidden('#member2');
+	CancelVisibilityHidden('#member3');
+	CancelVisibilityHidden('#member4');
+	CancelVisibilityHidden('.techPanel');
+	CancelVisibilityHidden('#updatesLeft');
+	CancelVisibilityHidden('#updatesRight');
+	CancelVisibilityHidden('.firstTab');
+}
 
+if ($(window).width() < 1000) {
+	ElementsVisibility();
+}

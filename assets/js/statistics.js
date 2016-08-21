@@ -1,18 +1,15 @@
 /* RESPONSIVITY FOR IMG */
-if ($(window).width() < 1000) {
-	$('#statistics .statImg img').css('width', '100%');
-}
-else {
-	$('#statistics .statImg img').css('width', '120%');
-}
-//dynamic img resize
-$(window).resize(function(){
+function SetStatisticsSize() {
 	if ($(window).width() < 1000) {
 		$('#statistics .statImg img').css('width', '100%');
 	}
 	else {
 		$('#statistics .statImg img').css('width', '120%');
 	}
+}
+SetStatisticsSize()
+$(window).resize(function(){
+	SetStatisticsSize()
 })
 
 

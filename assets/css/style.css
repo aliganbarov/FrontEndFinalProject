@@ -6061,10 +6061,10 @@ body, html {
     padding-bottom: 30px; }
     #technology .techPanel .techText {
       margin-top: 60px; }
-      #technology .techPanel .techText h3 {
+      #technology .techPanel .techText h2 {
         font-size: 34px;
         font-weight: normal; }
-        #technology .techPanel .techText h3 span {
+        #technology .techPanel .techText h2 span {
           color: #1AC6FF; }
       #technology .techPanel .techText p {
         line-height: 25px;
@@ -6263,9 +6263,9 @@ body, html {
   #prices .row3 {
     padding-top: 30px;
     padding-bottom: 30px; }
-    #prices .row3 h2 {
+    #prices .row3 h1 {
       font-size: 45px; }
-      #prices .row3 h2 span {
+      #prices .row3 h1 span {
         color: #1AC6FF; }
     #prices .row3 p {
       margin: 0 auto;

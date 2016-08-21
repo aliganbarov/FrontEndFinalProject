@@ -1,95 +1,29 @@
-/* RESPONSIVITY FOR BUTTONS */
-if ($(window).width() < 1000) {
-	$('#startup .row1 button')
-	.addClass("col-xs-12")
-	.css("width", "100%");
-}
-else {
-	$('#startup .row1 button')
-	.removeClass("col-xs-12")
-	.css("width", "180px");
-}
-//DYNAMIC RESIZE
-$(window).resize(function() {
+function SetStartupSize() {
 	if ($(window).width() < 1000) {
 		$('#startup .row1 button')
 		.addClass("col-xs-12")
 		.css("width", "100%");
-
+		$('#startup .firstTab .firstTabText h5').css('width', '90%');
+		$('#startup .secondTab .secondTabText').css('padding-top', '0px');
+		$('#startup .secondTab .secondTabText h5').css('width', '100%');
+		$('#startup .thirdTab .row1 p').css("width", "100%");
 	}
 	else {
 		$('#startup .row1 button')
 		.removeClass("col-xs-12")
 		.css("width", "180px");
-	}
-})
-
-/* RESPONSIVITY FOR FIRST TAB */
-if ($(window).width() < 1000) {
-	$('#startup .firstTab .firstTabText h2').css('font-size', '23px');
-	$('#startup .firstTab .firstTabText h5').css('width', '90%');
-}
-else {
-	$('#startup .firstTab .firstTabText h2').css('font-size', '34px');
-	$('#startup .firstTab .firstTabText h5').css('width', '70%');
-}
-//DYNAMIC RESIZE
-$(window).resize(function() {
-	if ($(window).width() < 1000) {
-		$('#startup .firstTab .firstTabText h2').css('font-size', '23px');
-		$('#startup .firstTab .firstTabText h5').css('width', '90%');
-	}
-	else {
-		$('#startup .firstTab .firstTabText h2').css('font-size', '34px');
 		$('#startup .firstTab .firstTabText h5').css('width', '70%');
-	}
-})
-
-/* RESONSIVITY FOR SECOND TAB */
-if ($(window).width() < 1000) {
-	$('#startup .secondTab .secondTabText').css('padding-top', '0px');
-	$('#startup .secondTab .secondTabText h2').css('font-size', '22px');
-	$('#startup .secondTab .secondTabText h5').css('width', '100%');
-}
-else {
-	$('#startup .secondTab .secondTabText').css('padding-top', '60px');
-	$('#startup .secondTab .secondTabText h2').css('font-size', '34px');
-	$('#startup .secondTab .secondTabText h5').css('width', '70%');
-}
-//DYNAMIC RESIZE
-$(window).resize(function() {
-	if ($(window).width() < 1000) {
-		$('#startup .secondTab .secondTabText').css('padding-top', '0px');
-		$('#startup .secondTab .secondTabText h2').css('font-size', '22px');
-		$('#startup .secondTab .secondTabText h5').css('width', '100%');
-	}
-	else {
 		$('#startup .secondTab .secondTabText').css('padding-top', '60px');
-		$('#startup .secondTab .secondTabText h2').css('font-size', '34px');
 		$('#startup .secondTab .secondTabText h5').css('width', '70%');
+		$('#startup .thirdTab .row1 p').css("width", "30%");
 	}
+}
+SetStartupSize()
+$(window).resize(function() {
+	SetStartupSize()
 })
 
-/* RESPONSIVITY FOR THIRD TAB */
-if ($(window).width() < 1000) {
-	$('#startup .thirdTab .row1 h1').css("font-size", "27px");	//setting h1
-	$('#startup .thirdTab .row1 p').css("width", "100%");		//setting p
-}
-else {
-	$('#startup .thirdTab .row1 h1').css("font-size", "45px");	//setting h1
-	$('#startup .thirdTab .row1 p').css("width", "30%");		//setting p
-}
-//DYNAMIC RESIZE
-$(window).resize(function() {
-	if ($(window).width() < 1000) {
-		$('#startup .thirdTab .row1 h1').css("font-size", "27px");	//setting h1
-		$('#startup .thirdTab .row1 p').css("width", "100%");		//setting p
-	}
-	else {
-		$('#startup .thirdTab .row1 h1').css("font-size", "45px");	//setting h1
-		$('#startup .thirdTab .row1 p').css("width", "30%");		//setting p
-}
-})
+
 
 /* CONNECTING BUTTONS TO TABS */
 var buttons = [$('#firstTabBtn'), $('#secondTabBtn'), $('#thirdTabBtn')];
