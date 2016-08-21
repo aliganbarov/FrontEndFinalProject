@@ -87,7 +87,6 @@ $('#homepagesMenu').on('mouseleave', function() {
 })
 
 $('#blog').on('mouseenter', function(){
-	console.log("hovered on #blog")
 	$('#blogMenu').fadeIn(500);
 });
 $('#blog').on('mouseleave', function(){
@@ -119,5 +118,181 @@ $(window).scroll(function(){
 	else {
 		$('#header').removeClass('white');
 		$('.navbar-brand img').attr('src', 'img/3.png');
+	}
+})
+
+
+/* LOCATING #homepagesMenu */
+$('#homepages').on('mouseenter', function(){
+	//first check if big screen 
+	if ($(window).width() > 1000) {
+		//left according to #homepages
+		var leftPos = $('#homepages').offset().left + $('#homepages').width();
+		//check whether to place on right or left
+		if ($(window).width() > (leftPos + $('#homepagesMenu').width())) {
+			//if width of window bigger than left start point of #homepagesMenu 
+			//+ it's width then place on right side
+			$('#homepagesMenu').css({
+				top: '64px',
+				left: leftPos + 'px'
+			})
+		}
+		else {
+			//if width of screen is less than #homepages + #homepagesMenu width
+			//place on left side
+			var leftPos = $('#homepages').offset().left - $('#homepages').width();
+			$('#homepagesMenu').css({
+				top: '64px',
+				left: $('#homepages').offset().left - $('#homepagesMenu').width() + 'px'
+			})
+		}
+	}
+	//locating for small screen
+	else {
+
+	}
+})
+
+/* LOCATING #blogMenu */
+$('#blog').on('mouseenter', function(){
+	//first check if big screen 
+	if ($(window).width() > 1000) {
+		var topPos = 110;
+		var leftPos = $('#blog').offset().left + $('#blog').width();
+		if ($(window).width() > (leftPos + $('#blogMenu').width())) {
+			$('#blogMenu').css({
+				top: topPos + 'px',
+				left: leftPos + 'px'
+			})
+		}
+		else {
+			var leftPos = $('#blog').offset().left - $('#blog').width();
+			$('#blogMenu').css({
+				top: topPos + 'px',
+				left: $('#blog').offset().left - $('#blogMenu').width() + 'px'
+			})
+		}
+	}
+	//locating for small screen
+	else {
+
+	}
+})
+
+/* LOCATING #ecommerceMenu */
+$('#ecommerce').on('mouseenter', function(){
+	//first check if big screen 
+	if ($(window).width() > 1000) {
+		var topPos = 156;
+		var leftPos = $('#ecommerce').offset().left + $('#ecommerce').width();
+		if ($(window).width() > (leftPos + $('#ecommerceMenu').width())) {
+			$('#ecommerceMenu').css({
+				top: topPos + 'px',
+				left: leftPos + 'px'
+			})
+		}
+		else {
+			var leftPos = $('#ecommerce').offset().left - $('#ecommerce').width();
+			$('#ecommerceMenu').css({
+				top: topPos + 'px',
+				left: $('#ecommerce').offset().left - $('#ecommerceMenu li').width() + 'px'
+			})
+		}
+	}
+	//locating for small screen
+	else {
+
+	}
+})
+
+
+/* CONNECT LINKS TO PAGES */
+$('#homeLink').on('click', function(){
+	HomeRemoveActiveClass();
+	$('#homeLink').addClass('active');
+	$('body').animate ({
+		scrollTop: $('#home').offset().top
+	}, 1000);
+})
+$('#aboutLink').on('click', function(){
+	HomeRemoveActiveClass();
+	$('#aboutLink').addClass('active');
+	$('body').animate ({
+		scrollTop: $('#startup').offset().top - $('#header').height()
+	}, 1000);
+})
+$('#featuresLink').on('click', function(){
+	HomeRemoveActiveClass();
+	$('#featuresLink').addClass('active');
+	$('body').animate ({
+		scrollTop: $('#statistics').offset().top - $('#header').height()
+	}, 1000);
+})
+$('#pricesLink').on('click', function(){
+	HomeRemoveActiveClass();
+	$('#pricesLink').addClass('active');
+	$('body').animate ({
+		scrollTop: $('#prices').offset().top - $('#header').height()
+	}, 1000);
+})
+$('#feedbackLink').on('click', function(){
+	HomeRemoveActiveClass();
+	$('#feedbackLink').addClass('active');
+	$('body').animate ({
+		scrollTop: $('#feedback').offset().top - $('#header').height()
+	}, 1000);
+})
+$('#teamLink').on('click', function(){
+	HomeRemoveActiveClass();
+	$('#teamLink').addClass('active');
+	$('body').animate ({
+		scrollTop: $('#team').offset().top - $('#header').height()
+	}, 1000);
+})
+$('#contactsLink').on('click', function(){
+	HomeRemoveActiveClass();
+	$('#contactsLink').addClass('active');
+	$('body').animate ({
+		scrollTop: $('#contacts').offset().top - $('#header').height()
+	}, 1000);
+})
+
+var menuLinks = ['#homeLink','#aboutLink', '#featuresLink', '#pricesLink', 
+				 '#feedbackLink', '#teamLink', '#contactsLink'];
+function HomeRemoveActiveClass() {
+	for (var i = 0; i < menuLinks.length; i++) {
+		$(menuLinks[i]).removeClass('active');
+	}
+}
+
+/* SWITCH BETWEEN NAVBAR LINKS ON SCROLL */
+$(window).scroll(function(){
+	if ($(window).scrollTop() >= $('#contacts').offset().top - $('#header').height() - $(window).height()) {
+		HomeRemoveActiveClass();
+		$('#contactsLink').addClass('active');
+	}
+	else if ($(window).scrollTop() >= $('#team').offset().top - $('#header').height()) {
+		HomeRemoveActiveClass();
+		$('#teamLink').addClass('active');
+	}
+	else if ($(window).scrollTop() >= $('#feedback').offset().top - $('#header').height()) {
+		HomeRemoveActiveClass();
+		$('#feedbackLink').addClass('active');
+	}
+	else if ($(window).scrollTop() >= $('#prices').offset().top - $('#header').height()) {
+		HomeRemoveActiveClass();
+		$('#pricesLink').addClass('active');
+	}
+	else if ($(window).scrollTop() >= $('#statistics').offset().top - $('#header').height()) {
+		HomeRemoveActiveClass();
+		$('#featuresLink').addClass('active');
+	}
+	else if ($(window).scrollTop() >= $('#startup').offset().top - $('#header').height()) {
+		HomeRemoveActiveClass();
+		$('#aboutLink').addClass('active');
+	}
+	else {
+		HomeRemoveActiveClass();
+		$('#homeLink').addClass('active');
 	}
 })

@@ -93,10 +93,11 @@
 		}
 		}	
 		#homepagesMenu {
-			position: relative;
+			position: absolute;
 			left: 72.33%;
 			top: -10px;
 			width: 160px;
+			z-index: 100;
 			li {
 				background: $openedColor;
 				padding: 10px 2px;
